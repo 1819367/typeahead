@@ -1,0 +1,122 @@
+/**
+ * base styles and typography
+ * ---------------
+ */
+:root {
+  --magenta-050: #fce7ff; 
+  --magenta-100: #f9d3ff;
+  --magenta-200: #f4a5ff;
+  --magenta-300: #f06dff;
+  --magenta-400: #e300f4;
+  --magenta-500: #a23dad;
+  --magenta-600: #92009d;
+  --magenta-700: #73007c;
+  --magenta-800: #520059;
+  --magenta-900: #330038;
+
+  --orange-vivid-050: #ffe8d9;
+  --orange-vivid-100: #ffd0b5;
+  --orange-vivid-200: #ffb088;
+  --orange-vivid-300: #ff9466;
+  --orange-vivid-400: #f9703e;
+  --orange-vivid-500: #f35627;
+  --orange-vivid-600: #de3a11;
+  --orange-vivid-700: #c52707;
+  --orange-vivid-800: #ad1d07;
+  --orange-vivid-900: #841003;
+
+  --blue-grey-050: #f0f4f8;
+  --blue-grey-100: #d9e2ec;
+  --blue-grey-200: #bcccdc;
+  --blue-grey-300: #9fb3c8;
+  --blue-grey-400: #829ab1;
+  --blue-grey-500: #627d98;
+  --blue-grey-600: #486581;
+  --blue-grey-700: #334e68;
+  --blue-grey-800: #243b53;
+  --blue-grey-900: #102a43;
+
+  --yellow-vivid-050: #fff8f1;
+  --yellow-vivid-100: #ffeedb;
+  --yellow-vivid-200: #ffe1ba;
+  --yellow-vivid-300: #ffd087;
+  --yellow-vivid-400: #ffc244;
+  --yellow-vivid-500: #f0b429;
+  --yellow-vivid-600: #de911d;
+  --yellow-vivid-700: #cb6e17;
+  --yellow-vivid-800: #b44d12;
+  --yellow-vivid-900: #8d2b0b;
+
+  --red-vivid-050: #ffeced;
+  --red-vivid-100: #ffdada;
+  --red-vivid-200: #ffb3b5;
+  --red-vivid-300: #ff888c;
+  --red-vivid-400: #ff525b;
+  --red-vivid-500: #e12d39;
+  --red-vivid-600: #cf1124;
+  --red-vivid-700: #a90015;
+  --red-vivid-800: #82000e;
+  --red-vivid-900: #600008;
+
+  --green-vivid-050: #c6ffc7;
+  --green-vivid-100: #87ff89;
+  --green-vivid-200: #00ec17;
+  --green-vivid-300: #00d013;
+  --green-vivid-400: #00b40f;
+  --green-vivid-500: #18981d;
+  --green-vivid-600: #0f8613;
+  --green-vivid-700: #006c04;
+  --green-vivid-800: #005102;
+  --green-vivid-900: #003701;
+}
+
+html {
+  font-family: "Roboto", Helvetica, sans-serif;
+}
+
+body {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  color: var(--blue-grey-700);
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 400;
+  color: var(--blue-grey-900)
+}
+
+h1 + p {
+  margin-top: 1rem;
+  color: var(--blue)
+}
+
+.wrap {
+  position: relative;
+  max-width: 29em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: auto;
+}
+
+/*****************
+ Typeahead
+******************/
+.typeahead {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.typeahead > input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--blue-grey-300);
+  background-color: var(--blue-grey-050);
+}
+
+.typeahead > input:focus,
+.typeahead > input:active {
+  outline:none;
+  background-color: white;
+  border-color: var(--magenta-300);
+}
