@@ -72,6 +72,8 @@
 
 html {
   font-family: "Roboto", Helvetica, sans-serif;
+   font-size: 125%;
+  line-height: 1.4;
 }
 
 body {
@@ -119,4 +121,42 @@ h1 + p {
   outline:none;
   background-color: white;
   border-color: var(--magenta-300);
+}
+
+.typehead > ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* Line height + padding + Border of input - 1px to overlap borders */
+  top: calc(1.4rem + 1.5rem + 2px - 1px);
+  border: 1px solid var(--blue-grey-300);
+  overflow: hidden;
+}
+
+.typeahead > ul:empty {
+  visibility: hidden;
+}
+
+.typeahead > ul > li:hover,
+.typeahead > ul > li:focus,
+.typeahead > ul > li:active {
+  background-color: var(--magenta-050);
+  border-color: var(--magenta-300)
+}
+
+.typeahead >ul > li > img {
+  max-width: 2.5em;
+  border: 1px solid var(--blue-grey-200);
+}
+
+@media(max-width: 400px) {
+  .typeahead >ul > li > img {
+    display: none;
+  }
+
+  .typeahead > ul > li > span {
+    display: block;
+    flex-grow: 1;
+    margin-right: 0.75em;
+  }
 }
