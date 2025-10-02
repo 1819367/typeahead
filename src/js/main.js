@@ -254,3 +254,39 @@ const countries = [
 ]
 
 // Start writing JavaScript here!
+const typeahead = document.querySelector('.typeahead')
+const input = typeahead.querySelector('input')
+const ul = typeahead.querySelector('ul')
+
+input.addEventListener('input', e => {
+    // get what the user typed, remove any white space, convert to lowercase
+    const input = e.target
+    const inputValue = input.value.trim().toLowerCase()
+
+    // Hides lsit if user typed nothing (or empties input field)
+    if(!inputValue) return ul.setAttribute('hidden', true)
+
+     // Finds a list of matched countries
+    const matches = countries.filter(country => {
+        const name = country.name.toLowerCase()
+        return name.startsWith(inputValue)
+    }) 
+
+    //Creates the innerHTML
+    const listItems = matches.map(country => {
+        return  `<li>${country.name}</li>`
+    })
+    .join('')
+
+    // Shows list
+    ul.innerHTML = listItems
+    ul.removeAttribute('hidden')
+})
+
+//Hide the list of predictions when user clicks outside the Typeahead
+document.addEventListener('click', e => {
+    if (!e.target.closest('.typeahead')) {
+        ul.setAttribute('hidden', true)
+        input.value = ''; //clear the input field
+    }
+})
